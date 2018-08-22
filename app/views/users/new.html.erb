@@ -3,20 +3,21 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user) do |foober| %>
-      <%= foober.label :name %>
-      <%= foober.text_field :name %>
+    <%= form_for(@user) do |f| %>
+    <%= render 'shared/error_messages' %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
 
-      <%= foober.label :email %>
-      <%= foober.email_field :email %>
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
 
-      <%= foober.label :password %>
-      <%= foober.password_field :password %>
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
 
-      <%= foober.label :password_confirmation, "Confirmation" %>
-      <%= foober.password_field :password_confirmation %>
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-      <%= foober.submit "Create my account", class: "btn btn-primary" %>
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
